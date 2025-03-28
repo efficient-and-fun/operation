@@ -19,7 +19,6 @@ jobs:
       - name: Update values.yaml
         run: |
           sed -i "s/^\(\s*frontend:\s*\n\(\s*repository:.*\n\)\s*tag:\s*\).*/\1${{ github.event.inputs.latestSHA }}/" plananaz/values.yaml
-          sed -i "s/^\(\s*backend:\s*\n\(\s*repository:.*\n\)\s*tag:\s*\).*/\1${{ github.event.inputs.latestSHA }}/" plananaz/values.yaml
 
 
       - name: Commit and push changes

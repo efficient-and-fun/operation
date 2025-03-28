@@ -1,0 +1,31 @@
+name: Update Values File
+
+on:
+  workflow_dispatch:
+    inputs:
+      latestSHA:
+        description: 'Latest commit SHA from app repo'
+        required: true
+        type: string
+
+jobs:
+  update-values:
+    runs-on: ubuntu-22.04
+
+    steps:
+      - name: Checkout GitOps repo
+        uses: actions/checkout@v4
+
+      - name: Update values.yaml
+        run: |
+          sed -i "s/^\(\s*backend:\s*\n\(\s*repository:.*\n\)\s*tag:\s*\).*/\1${{ github.event.inputs.latestSHA }}/" plananaz/values.yaml
+
+
+      - name: Commit and push changes
+        run: |
+          git config user.name "GitHub Actions"
+          git config user.email "actions@github.com"
+          git add plananaz/values.yaml
+          git commit -m "Update image tag to ${{ github.event.inputs.latestSHA }}"
+          git remote set-url origin https://x-access-token:${{ secrets.GH_ACTIONS_PAT }}@github.com/${{ github.repository }}
+          git push
