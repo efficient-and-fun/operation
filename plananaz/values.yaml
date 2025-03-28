@@ -1,0 +1,33 @@
+frontend:
+  image: ghcr.io/efficient-and-fun/plananaz-frontend-image
+  pullPolicy: Always
+  tag: latest
+  port: 80
+  VITE_API_BASE_URL: "http://backend:5246"
+
+backend:
+  image: ghcr.io/efficient-and-fun/plananaz-backend-image
+  tag: latest
+  port: 5246
+
+database:
+  image: postgres
+  pullPolicy: IfNotPresent
+  tag: 16
+  port: 5432
+  user: plananaz
+  password: plananaz-secret
+  dbname: plananaz
+
+storage:
+  enabled: true
+  storageClassName: cinder-csi
+  size: 5Gi
+  hostPath: "/mnt/data/db"
+
+
+service:
+  frontendPort: 8080
+  backendPort: 5246
+  databasePort: 5432
+  type: ClusterIPs
