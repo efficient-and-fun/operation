@@ -34,5 +34,5 @@ jobs:
           git config user.email "actions@github.com"
           git add plananaz/values.yaml
           git commit -m "Update image tag to ${{ github.event.inputs.latestSHA }}"
-          git remote set-url origin https://x-access-token:${{ secrets.GH_ACTIONS_PAT }}@github.com/${{ github.repository }}
+          git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}
           git push
