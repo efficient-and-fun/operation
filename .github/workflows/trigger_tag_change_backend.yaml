@@ -1,0 +1,33 @@
+name: Update Values File
+
+on:
+  workflow_dispatch:
+    inputs:
+      latestSHA:
+        description: 'Latest commit SHA from app repo'
+        required: true
+        type: string
+
+jobs:
+  update-values:
+    runs-on: ubuntu-22.04
+
+    steps:
+      - name: Checkout GitOps repo
+        uses: actions/checkout@v4
+        with:
+          ref: dev
+
+      - name: Update values.yaml
+        run: |
+          sed -i '/^backend:/,/^[^[:space:]]/ s/^\(\s*tag:\s*\).*/\1${{ github.event.inputs.latestSHA }}/' plananaz/values.yaml
+
+
+      - name: Commit and push changes
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add .
+          git commit -m "Automated update"
+          git push
+          
