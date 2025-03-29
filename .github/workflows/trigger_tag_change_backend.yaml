@@ -31,11 +31,9 @@ jobs:
 
       - name: Commit and push changes
         run: |
-          echo ${{secrets.GHAC_TOKEN_EF}}
-          git config user.name "GitHub Actions"
-          git config user.email "actions@github.com"
-          git add plananaz/values.yaml
-          git commit -m "Update image tag to ${{ github.event.inputs.latestSHA }}"
-          git remote set-url origin https://x-access-token:${{ secrets.GHAC_TOKEN_EF }}@github.com/${{ github.repository }}
+          run: |
+          git config --global user.name "Michael Weinhold"
+          git config --global user.email "miweinho@users.noreply.github.com"
+          git commit -am "update image tag ${{inputs.latestSHA}}"
           git push
           
