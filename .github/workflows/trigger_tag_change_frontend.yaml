@@ -20,19 +20,12 @@ jobs:
 
       - name: Update values.yaml
         run: |
-          echo "Before:"
-          cat plananaz/values.yaml
-
           sed -i '/^frontend:/,/^[^[:space:]]/ s/^\(\s*tag:\s*\).*/\1${{ github.event.inputs.latestSHA }}/' plananaz/values.yaml
-
-          echo "After:"
-          cat plananaz/values.yaml
 
       - name: Commit and push changes
         run: |
-          git config user.name "GitHub Actions"
-          git config user.email "actions@github.com"
-          git add plananaz/values.yaml
-          git commit -m "Update image tag to ${{ github.event.inputs.latestSHA }}"
-          git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add .
+          git commit -m "Automated update"
           git push
