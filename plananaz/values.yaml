@@ -7,7 +7,7 @@ frontend:
 
 backend:
   image: ghcr.io/efficient-and-fun/plananaz-backend-image
-  tag: latest
+  tag: asdf
   port: 5246
 
 database:
