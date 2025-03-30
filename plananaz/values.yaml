@@ -7,7 +7,7 @@ frontend:
 
 backend:
   image: ghcr.io/efficient-and-fun/plananaz-backend-image
-  tag: testcurl
+  tag: testcurlfdsafa
   port: 5246
 
 database:
