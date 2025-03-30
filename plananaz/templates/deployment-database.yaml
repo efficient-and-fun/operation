@@ -67,10 +67,10 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: database
+  name: {{ .Values.database.serviceName }}
 spec:
   selector:
-    app: database
+    app: {{ .Values.database.serviceName }}
   ports:
     - protocol: TCP
       port: {{ .Values.service.databasePort }} 

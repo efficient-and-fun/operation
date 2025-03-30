@@ -1,0 +1,48 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: db-init
+  annotations:
+    "helm.sh/hook": post-install
+    "helm.sh/hook-delete-policy": hook-succeeded
+spec:
+  backoffLimit: 3
+  template:
+    spec:
+      containers:
+        - name: psql
+          image: postgres:16-alpine
+          imagePullPolicy: {{ .Values.database.pullPolicy }}
+          command:
+            - sh
+            - -c
+            - |
+              echo "Waiting for database to be ready..."
+              until pg_isready -h $DATABASE_URL -p {{ .Values.database.port }}; do
+              echo "Database not ready yet - sleeping"
+              sleep 5
+              done
+              echo "Database is ready, starting initialization..."
+              psql -h $DATABASE_URL \
+                -p {{ .Values.database.port }} \
+                -U $POSTGRES_USER \
+                -d $POSTGRES_DB \
+                -f /init/init_db.sql            
+          env:
+            - name: POSTGRES_USER
+              value: {{ .Values.database.user }}
+            - name: POSTGRES_DB
+              value: {{ .Values.database.dbname }}
+            - name: PGPASSWORD
+              value: {{ .Values.database.password }}
+            - name: DATABASE_URL
+              value: {{ .Values.database.serviceName }}
+          volumeMounts:
+            - name: init-script
+              mountPath: /init
+              readOnly: true
+      restartPolicy: OnFailure
+      volumes:
+        - name: init-script
+          configMap:
+            name: db-init-script
