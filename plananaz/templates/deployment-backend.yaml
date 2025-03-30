@@ -20,6 +20,16 @@ spec:
           env:
             - name: ASPNETCORE_URLS
               value: "http://+:{{ .Values.backend.port }}"
+            - name: POSTGRES_USER
+              value: {{ .Values.database.user }}
+            - name: POSTGRES_PASSWORD
+              value: {{ .Values.database.password }}
+            - name: POSTGRES_DB
+              value: {{ .Values.database.dbname }}
+            - name: PGDATA
+              value: /var/lib/postgresql/data/pgdata
+            - name: DATABASE_URL
+              value: {{ .Values.database.serviceName }}
           resources:
             requests:
               cpu: "100m"
@@ -31,10 +41,10 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: backend  # 👈 This service makes the backend reachable inside Kubernetes
+  name: {{ .Values.backend.serviceName }}
 spec:
   selector:
-    app: backend
+    app: {{ .Values.backend.serviceName }}
   ports:
     - protocol: TCP
       port: {{ .Values.service.backendPort }} # The port exposed in the cluster

@@ -25,23 +25,14 @@ spec:
               ephemeral-storage: "1Gi"
             limits:
               memory: "256Mi"
-          env:
-            - name: POSTGRES_USER
-              value: {{ .Values.database.user }}
-            - name: POSTGRES_PASSWORD
-              value: {{ .Values.database.password }}
-            - name: POSTGRES_DB
-              value: {{ .Values.database.dbname }}
-            - name: PGDATA
-              value: /var/lib/postgresql/data/pgdata
 ---
 apiVersion: v1
 kind: Service
 metadata:
-  name: frontend  # 👈 This service makes the frontend reachable inside Kubernetes
+  name: {{ .Values.frontend.serviceName}}  # 👈 This service makes the frontend reachable inside Kubernetes
 spec:
   selector:
-    app: frontend
+    app: {{ .Values.frontend.serviceName}}
   ports:
     - protocol: TCP
       port: {{ .Values.service.frontendPort }} # The port exposed in the cluster
