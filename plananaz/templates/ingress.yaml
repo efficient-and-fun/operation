@@ -4,7 +4,28 @@ metadata:
   name: plananaz-ingress
 spec:
   rules:
-    - host: scmy-ef-staging.pm4.init-lab.ch
+    {{- if .Values.ingress.enabled }}
+    {{- range .Values.ingress.hosts }}
+    - host: {{ .host }}
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: frontend
+                port:
+                  number: {{ $.Values.service.frontendPort }}
+          - path: /api
+            pathType: Prefix
+            backend:
+              service:
+                name: backend
+                port:
+                  number: {{ $.Values.service.backendPort }}
+    {{- end }}
+    {{- else }}
+    - host: {{ .Values.ingress.defaultHost }}
       http:
         paths:
           - path: /
@@ -21,3 +42,4 @@ spec:
                 name: backend
                 port:
                   number: {{ .Values.service.backendPort }}
+    {{- end }}
