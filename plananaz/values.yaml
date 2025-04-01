@@ -34,3 +34,7 @@ service:
   backendPort: 5246
   databasePort: 5432
   type: ClusterIPs
+
+ingress:
+  enabled: true
+  defaultHost: plananaz.pm4.init-lab.ch
