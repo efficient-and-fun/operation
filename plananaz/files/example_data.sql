@@ -1,10 +1,5 @@
 SET SEARCH_PATH TO 'plananaz';
 
-select * from meetups;
-select * from users;
-select * from participations;
-
-
 insert into Users (username, email, userpassword, profilepicturepath, dietaryrestrictions) 
 values ('Dustin', 'fiechdus@students.zhaw.ch', 'NotHashedPassword', 'C:\test\path\', null);
 
