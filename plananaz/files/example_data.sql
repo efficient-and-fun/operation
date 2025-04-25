@@ -12,7 +12,7 @@ values ('first meetup', 'my very first meetup', null, '2025-04-13 00:00', '2025-
 ('Jazz Festival Basel', 'Live performances from international jazz artists.', null, '2025-05-11 18:00', '2025-05-11 23:00', 'Kunsthalle Basel'),
 ('Food Truck Fiesta', 'Street food from around the world.', null, '2025-06-01 12:00', '2025-06-01 22:00', 'Limmatquai, Zürich'),
 ('Hackathon Weekend', 'A 48-hour coding marathon to build innovative solutions.', null, '2025-08-01 09:00', '2025-08-03 18:00', 'ETH Zurich'),
-('Art Exhibition Opening', null, null, '2025-07-25 18:00', '2025-07-25 21:00', 'Zurich Art Museum');
+('Art Exhibition Opening', null, null, '2025-07-25 18:00', '2025-07-25 21:00', 'Zurich Art Museum'),
 ('Spring Into Tech', 'Kick off spring with a meetup for tech enthusiasts at the Innovation Hub.', NULL, '2025-04-25 18:00', '2025-04-25 20:00', 'Innovation Hub Zürich'),
 ('Art & Wine Evening', 'Enjoy a selection of wines while admiring local artworks.', NULL, '2025-04-27 18:00', '2025-04-27 20:00', 'Gallery Noir'),
 ('Sunset Yoga', 'Relax with a guided yoga session by the shores of Lake Zürich.', NULL, '2025-04-29 18:00', '2025-04-29 20:00', 'Lake Zürich Shore'),
