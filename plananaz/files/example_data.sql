@@ -6,6 +6,48 @@ values ('Dustin', 'fiechdus@students.zhaw.ch', 'NotHashedPassword', 'C:\test\pat
 insert into Participations (userid, meetupid, hasacceptedinvitation, hasattended, rating)
 values (1, 1, true, false, 0),
 (1, 2, false, false, 0);
+(1, 3, false, false, 0);
+(1, 4, false, false, 0);
+(1, 5, false, false, 0);
+(1, 6, false, false, 0);
+(1, 7, false, false, 0);
+(1, 8, false, false, 0);
+(1, 9, false, false, 0);
+(1, 10, false, false, 0);
+(1, 11, false, false, 0);
+(1, 12, false, false, 0);
+(1, 13, false, false, 0);
+(1, 14, false, false, 0);
+(1, 15, false, false, 0);
+(1, 16, false, false, 0);
+(1, 17, false, false, 0);
+(1, 18, false, false, 0);
+(1, 19, false, false, 0);
+(1, 20, false, false, 0);
+(1, 21, false, false, 0);
+(1, 22, false, false, 0);
+(1, 23, false, false, 0);
+(1, 24, false, false, 0);
+(1, 25, false, false, 0);
+(1, 26, false, false, 0);
+(1, 27, false, false, 0);
+(1, 28, false, false, 0);
+(1, 29, false, false, 0);
+(1, 30, false, false, 0);
+(1, 31, false, false, 0);
+(1, 32, false, false, 0);
+(1, 33, false, false, 0);
+(1, 34, false, false, 0);
+(1, 35, false, false, 0);
+(1, 36, false, false, 0);
+(1, 37, false, false, 0);
+(1, 38, false, false, 0);
+(1, 39, false, false, 0);
+(1, 40, false, false, 0);
+(1, 41, false, false, 0);
+(1, 42, false, false, 0);
+(1, 43, false, false, 0);
+
 
 insert into MeetUps (Meetupname, Description, Checklist, DateTimeFrom, DateTimeTo, Meetuplocation) 
 values ('first meetup', 'my very first meetup', null, '2025-04-13 00:00', '2025-04-13 21:29', 'bim dustin di hai'),
