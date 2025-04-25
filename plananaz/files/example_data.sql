@@ -9,7 +9,7 @@ values ('first meetup', 'my very first meetup', null, '2025-04-13 00:00', '2025-
 ('third meetup', 'my third meetup', null, '2025-04-15 18:00', '2025-04-15 21:29', 'bim sascha di hai'),
 ('Open Air Cinema', 'Enjoy a movie under the stars in the city park.', null, '2025-07-15 20:30', '2025-07-15 23:00', 'Stadtpark Zürich'),
 ('Tech Meetup Bern', 'A chance for tech enthusiasts to meet and share ideas.', null, '2025-05-10 18:00', '2025-05-10 20:00', 'Impact Hub Bern'),
-('Jazz Festival Basel', 'Live performances from international jazz artists.', null, null, null, 'Kunsthalle Basel'),
+('Jazz Festival Basel', 'Live performances from international jazz artists.', null, '2025-05-11 18:00', '2025-05-11 23:00', 'Kunsthalle Basel'),
 ('Food Truck Fiesta', 'Street food from around the world.', null, '2025-06-01 12:00', '2025-06-01 22:00', 'Limmatquai, Zürich'),
 ('Hackathon Weekend', 'A 48-hour coding marathon to build innovative solutions.', null, '2025-08-01 09:00', '2025-08-03 18:00', 'ETH Zurich'),
 ('Art Exhibition Opening', null, null, '2025-07-25 18:00', '2025-07-25 21:00', 'Zurich Art Museum');
@@ -49,11 +49,11 @@ values ('first meetup', 'my very first meetup', null, '2025-04-13 00:00', '2025-
 ('Summer Sendoff Party', 'Celebrate the start of summer with DJs and drinks.', NULL, '2025-06-30 18:00', '2025-06-30 21:00', 'Sechseläutenplatz');
 
 insert into Participations (userid, meetupid, hasacceptedinvitation, hasattended, rating)
-values (1, 1, true, true, 0),
-(1, 2, true, true, 0),
-(1, 3, true, true, 0),
-(1, 4, true, true, 0),
-(1, 5, true, true, 0),
+values (1, 1, true, false, 0),
+(1, 2, true, false, 0),
+(1, 3, true, false, 0),
+(1, 4, true, false, 0),
+(1, 5, true, false, 0),
 (1, 6, true, true, 0),
 (1, 7, true, true, 0),
 (1, 8, true, true, 0),
