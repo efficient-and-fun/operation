@@ -6,7 +6,7 @@ values ('Dustin', 'fiechdus@students.zhaw.ch', 'NotHashedPassword', 'C:\test\pat
 insert into MeetUps (Meetupname, Description, Checklist, DateTimeFrom, DateTimeTo, Meetuplocation) 
 values ('first meetup', 'my very first meetup', null, '2025-04-13 00:00', '2025-04-13 21:29', 'bim dustin di hai'),
 ('second meetup', 'my second meetup', null, '2025-04-14 00:00', '2025-04-14 21:29', 'bim Min Khanh di hai'),
-('third meetup', 'my third meetup', null, '2025-04-15 18:00', '2025-04-15 21:29', 'bim sascha di hai');
+('third meetup', 'my third meetup', null, '2025-04-15 18:00', '2025-04-15 21:29', 'bim sascha di hai'),
 ('Open Air Cinema', 'Enjoy a movie under the stars in the city park.', null, '2025-07-15 20:30', '2025-07-15 23:00', 'Stadtpark Zürich'),
 ('Tech Meetup Bern', 'A chance for tech enthusiasts to meet and share ideas.', null, '2025-05-10 18:00', '2025-05-10 20:00', 'Impact Hub Bern'),
 ('Jazz Festival Basel', 'Live performances from international jazz artists.', null, null, null, 'Kunsthalle Basel'),
@@ -50,45 +50,45 @@ values ('first meetup', 'my very first meetup', null, '2025-04-13 00:00', '2025-
 
 insert into Participations (userid, meetupid, hasacceptedinvitation, hasattended, rating)
 values (1, 1, true, true, 0),
-(1, 2, true, true, 0);
-(1, 3, true, true, 0);
-(1, 4, true, true, 0);
-(1, 5, true, true, 0);
-(1, 6, true, true, 0);
-(1, 7, true, true, 0);
-(1, 8, true, true, 0);
-(1, 9, true, true, 0);
-(1, 10, true, true, 0);
-(1, 11, true, true, 0);
-(1, 12, true, true, 0);
-(1, 13, true, true, 0);
-(1, 14, true, true, 0);
-(1, 15, true, true, 0);
-(1, 16, true, true, 0);
-(1, 17, true, true, 0);
-(1, 18, true, true, 0);
-(1, 19, true, true, 0);
-(1, 20, true, true, 0);
-(1, 21, true, true, 0);
-(1, 22, true, true, 0);
-(1, 23, true, true, 0);
-(1, 24, true, true, 0);
-(1, 25, true, true, 0);
-(1, 26, true, true, 0);
-(1, 27, true, true, 0);
-(1, 28, true, true, 0);
-(1, 29, true, true, 0);
-(1, 30, true, true, 0);
-(1, 31, true, true, 0);
-(1, 32, true, true, 0);
-(1, 33, true, true, 0);
-(1, 34, true, true, 0);
-(1, 35, true, true, 0);
-(1, 36, true, true, 0);
-(1, 37, true, true, 0);
-(1, 38, true, true, 0);
-(1, 39, true, true, 0);
-(1, 40, true, true, 0);
-(1, 41, true, true, 0);
-(1, 42, true, true, 0);
+(1, 2, true, true, 0),
+(1, 3, true, true, 0),
+(1, 4, true, true, 0),
+(1, 5, true, true, 0),
+(1, 6, true, true, 0),
+(1, 7, true, true, 0),
+(1, 8, true, true, 0),
+(1, 9, true, true, 0),
+(1, 10, true, true, 0),
+(1, 11, true, true, 0),
+(1, 12, true, true, 0),
+(1, 13, true, true, 0),
+(1, 14, true, true, 0),
+(1, 15, true, true, 0),
+(1, 16, true, true, 0),
+(1, 17, true, true, 0),
+(1, 18, true, true, 0),
+(1, 19, true, true, 0),
+(1, 20, true, true, 0),
+(1, 21, true, true, 0),
+(1, 22, true, true, 0),
+(1, 23, true, true, 0),
+(1, 24, true, true, 0),
+(1, 25, true, true, 0),
+(1, 26, true, true, 0),
+(1, 27, true, true, 0),
+(1, 28, true, true, 0),
+(1, 29, true, true, 0),
+(1, 30, true, true, 0),
+(1, 31, true, true, 0),
+(1, 32, true, true, 0),
+(1, 33, true, true, 0),
+(1, 34, true, true, 0),
+(1, 35, true, true, 0),
+(1, 36, true, true, 0),
+(1, 37, true, true, 0),
+(1, 38, true, true, 0),
+(1, 39, true, true, 0),
+(1, 40, true, true, 0),
+(1, 41, true, true, 0),
+(1, 42, true, true, 0),
 (1, 43, true, true, 0);
