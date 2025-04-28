@@ -31,7 +31,7 @@ spec:
             - name: DATABASE_URL
               value: {{ .Values.database.serviceName }}
             - name: ConnectionStrings__DefaultConnection
-              value: {{ printf "Host=%s;Port=%d;Database=%s;Username=%s;Password=%s;Pooling=%t;Include Error Detail=%t;"
+              value: {{ printf "Host=%s;Port=%v;Database=%s;Username=%s;Password=%s;Pooling=%t;Include Error Detail=%t;"
               .Values.database.host
               .Values.database.port
               .Values.database.dbname
