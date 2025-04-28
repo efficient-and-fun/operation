@@ -30,6 +30,17 @@ spec:
               value: /var/lib/postgresql/data/pgdata
             - name: DATABASE_URL
               value: {{ .Values.database.serviceName }}
+            - name: ConnectionStrings__DefaultConnection
+              value: {{ printf "Host=%s;Port=%d;Database=%s;Username=%s;Password=%s;Pooling=%t;Include Error Detail=%t;"
+              .Values.database.host
+              .Values.database.port
+              .Values.database.dbname
+              .Values.database.user
+              .Values.database.password
+              .Values.database.pooling
+              .Values.database.includeErrorDetail | quote }}
+            - name: ASPNETCORE_ENVIRONMENT
+              value: {{ .Values.backend.environment }}
           resources:
             requests:
               cpu: "100m"

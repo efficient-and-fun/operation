@@ -11,8 +11,10 @@ backend:
   tag: 2e984d4195408ba24c6b19421bc1eb1fb9a552f2
   port: 5246
   serviceName: backend
+  environment: "Development"
 
 database:
+  host: database
   image: postgres
   pullPolicy: IfNotPresent
   tag: 16
@@ -21,6 +23,8 @@ database:
   password: plananaz-secret
   dbname: plananaz
   serviceName: database
+  pooling: true
+  includeErrorDetail: true
 
 storage:
   enabled: true
