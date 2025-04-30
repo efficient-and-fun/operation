@@ -1,6 +1,6 @@
 frontend:
   image: ghcr.io/efficient-and-fun/plananaz-frontend-image
-  tag: 7e5219c55c65e4369fd399d9027581a21bada260
+  tag: 6597dbb8e7c4451b165a6131db619882d2511337
   pullPolicy: Always
   port: 80
   VITE_API_BASE_URL: "http://backend:5246"
