@@ -43,6 +43,7 @@ CREATE TABLE IF NOT EXISTS plananaz.MeetUps (
 	DateTimeFrom TIMESTAMPTZ NOT NULL,
 	DateTimeTo TIMESTAMPTZ NOT NULL,
 	MeetUpLocation TEXT,
+	MaxNumberOfParticipants INT,
 
 	CONSTRAINT pk_MeetUps PRIMARY KEY (MeetUpId)
 );
