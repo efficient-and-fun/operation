@@ -28,7 +28,15 @@ spec:
                 -p {{ .Values.database.port }} \
                 -U $POSTGRES_USER \
                 -d $POSTGRES_DB \
-                -f /init/init_db.sql            
+                -f /init/init_db.sql
+                
+              echo "Loading example data..."
+              psql -h $DATABASE_URL \
+                -p {{ .Values.database.port }} \
+                -U $POSTGRES_USER \
+                -d $POSTGRES_DB \
+                -f /init/example_data.sql
+
           env:
             - name: POSTGRES_USER
               value: {{ .Values.database.user }}

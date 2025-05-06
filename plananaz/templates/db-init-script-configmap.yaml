@@ -5,3 +5,5 @@ metadata:
 data:
   init_db.sql: |-
 {{ .Files.Get "files/init_db.sql" | nindent 4 }}
+  example_data.sql: |-
+{{ .Files.Get "files/example_data.sql" | nindent 4 }}

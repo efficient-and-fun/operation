@@ -25,7 +25,7 @@ database:
   serviceName: database
   pooling: true
   includeErrorDetail: true
-  forceInitJob: true
+  forceInitJob: false
 
 storage:
   enabled: true
