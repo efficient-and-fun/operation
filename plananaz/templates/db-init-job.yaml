@@ -1,4 +1,4 @@
-{{- if .Release.IsInstall }}
+{{- if or .Release.IsInstall .Values.database.forceInitJob }}
 apiVersion: batch/v1
 kind: Job
 metadata:
