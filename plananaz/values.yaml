@@ -8,7 +8,7 @@ frontend:
 
 backend:
   image: ghcr.io/efficient-and-fun/plananaz-backend-image
-  tag: 2c11ecd8eb2174751e3598306dc0139f3f9c623c
+  tag: 32dd212450561a732c6536f895bbef5911beb2f4
   port: 5246
   serviceName: backend
   environment: "Development"
